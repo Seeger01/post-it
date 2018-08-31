@@ -9,52 +9,53 @@
 
 <body>
 	<div class="postit">
-		<a href="#">
+		<div class="ef">
 		<time>Dato</time>
 		<h2>Overskrift</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, eveniet distinctio nesciunt quis.</p>
 		<p class="name">MORO</p>
-		</a>
+		</div>
 	</div>
-		<div class="postit">
-		<a href="#">
+	<div class="postit">
+		<div class="ef">
 		<time>Dato</time>
 		<h2>Overskrift</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, eveniet distinctio nesciunt quis.</p>
 		<p class="name">MORO</p>
-		</a>
+		</div>
 	</div>
-		<div class="postit">
-		<a href="#">
+	<div class="postit">
+		<div class="ef">
 		<time>Dato</time>
 		<h2>Overskrift</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, eveniet distinctio nesciunt quis.</p>
 		<p class="name">MORO</p>
-		</a>
+		</div>
 	</div>
-		<div class="postit">
-		<a href="#">
+	<div class="postit">
+		<div class="ef">
 		<time>Dato</time>
 		<h2>Overskrift</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, eveniet distinctio nesciunt quis.</p>
 		<p class="name">MORO</p>
-		</a>
+		</div>
 	</div>
-		<div class="postit">
-		<a href="#">
+	<div class="postit">
+		<div class="ef">
 		<time>Dato</time>
 		<h2>Overskrift</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, eveniet distinctio nesciunt quis.</p>
 		<p class="name">MORO</p>
-		</a>
+		</div>
 	</div>
-		<div class="postit">
-		<a href="#">
+	<div class="postit">
+		<div class="ef">
 		<time>Dato</time>
 		<h2>Overskrift</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, eveniet distinctio nesciunt quis.</p>
 		<p class="name">MORO</p>
-		</a>
+		</div>
 	</div>
+		
 </body>
 </html>

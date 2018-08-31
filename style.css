@@ -10,10 +10,9 @@
 			background:#888;
   			color:#fff;
 		}
-		
 
-		.postit a {
-			text-decoration: none;
+		.postit .ef {
+			
 			color: #000;
 			display: block;
 			margin: 20px;
@@ -29,27 +28,52 @@
 
 		}
 
-		.postit a:hover,.postit a:focus{
+		.postit .ef:hover,.postit .ef:focus{
 			box-shadow: 10px 10px 7px -4px black;
  			-webkit-transform: scale(1.1);
-  		
+  			
 		}
 
 		/* :nth-child = tager ét objekt ud af en række af objekter */
-		.postit:nth-child(2) {
+		.postit:nth-child(2)  .ef{
 			transform: rotate(10deg);
+			background: linear-gradient(135deg, #00dafa, #83efff);
 		}
-		.postit:nth-child(3) {
+		.postit:nth-child(3)  .ef{
 			transform: rotate(5deg);
+			background: linear-gradient(135deg, #5bcd06, #9efc8e);
 		}
-		.postit:nth-child(4) {
+		.postit:nth-child(4)  .ef{
 			transform: rotate(-5deg);
+			background: linear-gradient(135deg, #fd1800, #feaeae);
 		}
-		.postit:nth-child(5) {
+		.postit:nth-child(5)  .ef{
 			transform: rotate(4deg);
+			background: linear-gradient(135deg, #f600ff, #f7aefa);
 		}
-		.postit:nth-child(6) {
-			transform: rotate(0deg);
+		.postit:nth-child(6)  .ef{
+			transform: rotate(-2deg);
+			background: linear-gradient(135deg, #ffb400, #fcd67b);
+		}
+		.postit:nth-child(2)  .ef:hover{
+			box-shadow: 10px 10px 7px -4px black;
+ 			-webkit-transform: scale(1.1);
+		}
+		.postit:nth-child(3)  .ef:hover{
+			box-shadow: 10px 10px 7px -4px black;
+ 			-webkit-transform: scale(1.1);
+		}
+		.postit:nth-child(4)  .ef:hover{
+			box-shadow: 10px 10px 7px -4px black;
+ 			-webkit-transform: scale(1.1);
+		}
+		.postit:nth-child(5)  .ef:hover{
+			box-shadow: 10px 10px 7px -4px black;
+ 			-webkit-transform: scale(1.1);
+		}
+		.postit:nth-child(6)  .ef:hover{
+			box-shadow: 10px 10px 7px -4px black;
+ 			-webkit-transform: scale(1.1);
 		}
 		h2 {
 			margin-bottom: 10px;
@@ -63,4 +87,21 @@
 		time {
 			display: block;
 			text-align: right;
+		}
+
+		@media all and (max-width : 768px) {
+		.postit a {
+			margin: 10px;
+			width: 200px;
+			height: 200px;
+			font-size: 10px;
+		}
+	}
+		@media all and (max-width : 468px) {
+			.postit a {
+			margin: 5px;
+			width: 100px;
+			height: 100px;
+			font-size: 5px;
+
 		}
