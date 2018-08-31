@@ -90,7 +90,7 @@
 		}
 
 		@media all and (max-width : 768px) {
-		.postit a {
+		.postit .ef {
 			margin: 10px;
 			width: 200px;
 			height: 200px;
@@ -98,7 +98,7 @@
 		}
 	}
 		@media all and (max-width : 468px) {
-			.postit a {
+			.postit .ef {
 			margin: 5px;
 			width: 100px;
 			height: 100px;
