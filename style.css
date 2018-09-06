@@ -7,8 +7,41 @@
 			margin: 50px;
 			display: flex;
 			flex-wrap: wrap;
-			background:#888;
+			background:#fff;
   			color:#fff;
+		}
+
+		 .one {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+		h1 {
+			margin: 50px;
+			text-align: left;
+			color: red;
+		}
+		.button1 {
+			margin: 50px;
+			font: 700 2em sans-serif;
+			padding: 0.2em 1em;
+			background: linear-gradient(#82c963, #507c3e);
+			border: none;
+			border-radius: 10px;
+			color: #ECF4E8;
+			box-shadow: 2px 2px 5px #1B3311;
+			text-shadow: 0px 0px 3px #1B3311;
+
+		}
+
+		.board {
+			border-style: solid;
+			border-color: black;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			background-color: #888; 
+
 		}
 
 		.postit .ef {
@@ -82,6 +115,11 @@
 			margin: 10px;
 			position: absolute;
 			right: 0;
+			bottom: 0;
+		}
+		.delete {
+			margin: 10px;
+			position: absolute;
 			bottom: 0;
 		}
 		time {
