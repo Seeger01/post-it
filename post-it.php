@@ -8,17 +8,27 @@
 </head>
 
 <body>
-	
-	<h1>POST-IT HEAVEN</h1>
-	
+	<div class="body">
+	<div class="form">
 	<form action="docreatepostit.php" method="post">
-		<input type="text" name="author" placeholder="Forfatternavn">
-		<input type="text" name="headertext" placeholder="Overskrift">
-		<input type="text" name="bodytext" placeholder="Brødtekst">
+		<h1>Post-it heaven</h1>
+		<h4>please fill out your postit here</h4>
+		<label class="one">
+		<input class="hey" type="text" name="author" placeholder="Forfatternavn">
+		</label>
+		<label class="two">
+		<input class="hey" type="text" name="headertext" placeholder="Overskrift">
+		</label>
+		<label class="three">
+		<textarea type="text" name="bodytext" placeholder="Brødtekst">
+
+		</textarea> 
+		</label>
 		
+		<label class="four">
 		Farve:
 		<select name="colorid" required>
-<?php
+		<?php
 			require_once('dbcon.php');
 			$sql = 'SELECT id, colorname FROM color';
 			$stmt = $link->prepare($sql);
@@ -27,17 +37,15 @@
 
 			while($stmt->fetch()){
 				echo '<option value="'.$cid.'">'.$cnam.'</option>'.PHP_EOL;
-// Radio button example:
-// echo '<input type="radio" name="colorid" value="'.$cid.'"> '.$cnam.'<br>'; 
 			}
-?>
+		?>
 		</select>
-		
-		
-		<button type="submit" class="button1">Opret</button>
-	</form>
+		</label>
 	
-<hr>	
+		<button type="submit" class="button1">Create new</button>
+	</form>
+		</div>
+		<br>
 	<div class="board">
 <?php
 
@@ -51,7 +59,6 @@
 	while($stmt->fetch()){ 
 ?>
 	<div class="<?=$cssclass?>">
-		<div class="postit">
 			<div class="ef">
 				<time><?=$createdate?></time>
 				<h2><?=$htext?></h2>
@@ -60,16 +67,15 @@
 			
 				<form class="delete" action="dodeletepostit.php" method="post">
 					<input type="hidden" name="pid" value="<?=$pid?>">
-					<input type="image" src="delbutton.png" alt="Delete">
+					<input type="image" src="images/delbutton.png" alt="Delete">
 				</form>
 			</div>
-		</div>
 	</div>
 
 <?php	
 	}
 ?>
-
+</div>
 </div>
 </body>
 </html>

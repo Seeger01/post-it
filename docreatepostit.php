@@ -24,9 +24,8 @@ $colorid = filter_input(INPUT_POST, 'colorid') or die('Missing colorid parameter
 	$stmt->execute();
 	
 	echo 'Inserted '.$stmt->affected_rows.' new rows in the table';
-	
+	header( 'Location: post-it.php');	
 ?>
-	<a href="post-it.php">View the PostIt board</a>
 	
 </body>
 </html>

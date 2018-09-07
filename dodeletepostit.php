@@ -20,10 +20,8 @@
 	$stmt->execute();
 	
 	echo 'Deleted '.$stmt->affected_rows.' PostIt notes';
-	
+	header( 'Location: post-it.php');
 ?>
 	
-		<a href="post-it.php">View the PostIt board</a>
-
 </body>
 </html>
