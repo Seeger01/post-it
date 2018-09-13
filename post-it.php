@@ -1,18 +1,62 @@
-<!doctype html>
+<?php
+session_start();
+require_once('util.php');
+?><!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>Post-it</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
 
 <body>
 	<div class="body">
+		<?php 
+	$cmd = $_POST['cmd'] ?? null;
+	
+	switch ($cmd){
+		case 'createuser':
+			$un = filter_input(INPUT_POST, 'un') or die('Missing or illegal un parameter');	
+			$pw = filter_input(INPUT_POST, 'pw') or die('Missing or illegal pw parameter');	
+			if (createUser($un, $pw) > 0){
+				loginUser($un, $pw);
+			}
+			else {
+				echo 'unable to create user - username already exists';
+			}
+			break;
+		case 'login':
+			echo 'checklogin';
+			$un = filter_input(INPUT_POST, 'un') or die('Missing or illegal un parameter');	
+			$pw = filter_input(INPUT_POST, 'pw') or die('Missing or illegal pw parameter');	
+			loginUser($un, $pw);
+			break;
+		case 'logout':
+			logoutUser();
+			break;
+		default:
+			// ignore
+	}
+	
+?>
+	
+<form action="<?=$_SERVER['PHP_SELF']?>" method="post">	
+<?php
+	if (isset($_SESSION['uid'])){ ?>
+
+		Logged in as <?=$_SESSION['uname']?>
+		<button class="submit" type="submit" name="cmd" value="logout">Logout</button>
+<?php } else header('location: index.php'); 
+?>
+			
+</form>
+
 	<div class="form">
 	<form action="docreatepostit.php" method="post">
-		<h1>Post-it heaven</h1>
-		<h4>please fill out your postit here</h4>
+		<h1>Make your own post-it</h1>
+		<h4>Please fill out your postit here</h4>
+		<input type="hidden" name="users_id" value="<?=$_SESSION['uid']?>">
 		<label class="one">
 		<input class="hey" type="text" name="author" placeholder="Forfatternavn">
 		</label>
@@ -42,16 +86,22 @@
 		</select>
 		</label>
 	
-		<button type="submit" class="button1">Create new</button>
+		<button type="submit" class="submit1">Create new</button>
 	</form>
 		</div>
 		<br>
 	<div class="board">
 <?php
-
 	require_once('dbcon.php');
-	$sql = 'SELECT postit.id, createdate, author, headertext, bodytext, cssclass FROM postit, color WHERE color_id=color.id';
-	
+	$uid = $_SESSION["uid"];
+	$admin = $_SESSION["admin"];
+
+	if ($admin) {
+		$sql = "SELECT postit.id, createdate, author, headertext, bodytext, cssclass FROM postit, color where color_id=color.id";
+	}
+	else
+		$sql = "SELECT postit.id, createdate, author, headertext, bodytext, cssclass FROM postit, color where color_id=color.id and users_id=$uid";
+
 	$stmt = $link->prepare($sql);
 	$stmt->execute();
 	$stmt->bind_result($pid, $createdate, $author, $htext, $btext, $cssclass);
@@ -71,6 +121,7 @@
 				</form>
 			</div>
 	</div>
+
 
 <?php	
 	}

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>Login</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
@@ -17,6 +17,7 @@
 			<input class="pass" type="password" name="pw" placeholder="Password" required>
 			<button class="submit" type="submit">Opret</button>
 	</form>
+
 
 	<form action="login.php" method="post">
 		
